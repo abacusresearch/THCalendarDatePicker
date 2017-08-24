@@ -286,6 +286,7 @@
   [formatter setDateFormat:(_disableYearSwitch ? @"MMMM yyyy" : @"yyyy\nMMMM")];
   formatter.locale=[NSLocale currentLocale];
   NSString *monthName = [formatter stringFromDate:self.firstOfCurrentMonth];
+  [self.monthButton setTitleColor:[self.clearBtn titleColorForState:UIControlStateNormal] forState:UIControlStateNormal];
   [self.monthButton setTitle:monthName forState:UIControlStateNormal];
   
   if (self.dateTitle != nil && _allowClearDate == NO) {
