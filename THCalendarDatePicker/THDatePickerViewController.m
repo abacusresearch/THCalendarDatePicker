@@ -320,7 +320,7 @@
       curY += cellHeight;
     }
     
-    THDateDay * day = [[[NSBundle bundleForClass:self.class] loadNibNamed:@"THDateDay" owner:self options:nil] objectAtIndex:0];
+    THDateDay * day = [[[NSBundle bundleForClass:[THDateDay class]] loadNibNamed:@"THDateDay" owner:self options:nil] objectAtIndex:0];
     if ([self isRounded]) {
       [day setRounded:YES];
     }
