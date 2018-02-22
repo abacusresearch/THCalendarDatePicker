@@ -430,7 +430,8 @@
 }
 
 - (void)setDate:(NSDate *)date {
-  [self setSelectedDates:@[date]];
+  if (nil != date) // cliki-34
+    [self setSelectedDates:@[date]];
 }
 
 - (NSDate *)date {
