@@ -400,8 +400,8 @@
       dayLabel.textAlignment = NSTextAlignmentCenter;
       dayLabel.font = [UIFont systemFontOfSize:12];
       [self.weekdaysView addSubview:dayLabel];
-      dayLabel.text = df.shortWeekdaySymbols[(i + 1) % 7];
-//      dayLabel.text = [df stringFromDate:date];
+      dayLabel.text = df.shortWeekdaySymbols[(i + 1) % 7]; // cliki-250
+//      dayLabel.text = [df stringFromDate:date]; // cliki-250
       dayLabel.textColor = [UIColor grayColor];
       date = [_calendar dateByAddingComponents:offsetComponents toDate:date options:0];
       curX+=dayWidth;
