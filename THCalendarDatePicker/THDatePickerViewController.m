@@ -393,7 +393,6 @@
     df.locale = [NSLocale currentLocale];
     NSCalendar* cal =[NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
     [cal setLocale:[NSLocale currentLocale]];
-    
     [df setCalendar:cal];
     NSDate * date = [_calendar dateFromComponents:comps];
     for(int i = 0; i < 7; i++){
@@ -401,7 +400,8 @@
       dayLabel.textAlignment = NSTextAlignmentCenter;
       dayLabel.font = [UIFont systemFontOfSize:12];
       [self.weekdaysView addSubview:dayLabel];
-      dayLabel.text = [df stringFromDate:date];
+      dayLabel.text = df.shortWeekdaySymbols[(i + 1) % 7];
+//      dayLabel.text = [df stringFromDate:date];
       dayLabel.textColor = [UIColor grayColor];
       date = [_calendar dateByAddingComponents:offsetComponents toDate:date options:0];
       curX+=dayWidth;
